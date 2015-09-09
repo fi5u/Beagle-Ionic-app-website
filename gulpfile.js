@@ -51,7 +51,7 @@ gulp.task('watch', ['sass'/*, 'icons'*/], function() {
         notify: false
     });
 
-    gulp.watch(paths.sass + '/*.scss', ['sass']);
+    gulp.watch(paths.sass + '/**/*.scss', ['sass']);
     gulp.watch([paths.images + '/**/*.svg', paths.images + '/icons/_custom-selectors.json'], ['icons']);
     gulp.watch('**/*.html').on('change', browserSync.reload);
 });

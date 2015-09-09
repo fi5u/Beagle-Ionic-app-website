@@ -12,6 +12,8 @@ html {
 
 body {
     @include font-size(body);
+
+    background: linear-gradient(color(crimson), color(black));
 }
 
 img {

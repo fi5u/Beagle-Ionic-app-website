@@ -1,3 +1,7 @@
 .main {
+    background: color(white);
 
+    &__inner {
+        @include container;
+    }
 }
