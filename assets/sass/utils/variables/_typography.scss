@@ -1,0 +1,63 @@
+$font: (
+    body: (
+        stack: "'Lato', sans-serif",
+        weight: 400
+    ),
+    logo: (
+        stack: "'Vollkorn', serif",
+        weight: 400
+    )
+);
+
+$font-size: (
+    body: (
+        base: 16px,
+        content: 18px,
+        content-lh: 28px,
+        recipe-lh: 24px
+    ),
+    logo: (
+        base: 30px,
+        header: 30px
+    ),
+    nav: (
+        base: 16px,
+        header: 16px,
+        header-mob: 18px,
+        footer: 14px
+    ),
+    input: (
+        base: 14px,
+        search: 14px
+    ),
+    button: (
+        sm-inline: 14px,
+        sm-inline-lh: 25px
+    ),
+    title: (
+        hero: 75px,
+        hero-lh: 85px,
+        hero-mob: 45px,
+        hero-mob-lh: 50px,
+        brand-gallery: 30px,
+        content: 40px,
+        content-lh: 50px,
+        recipe-highlight: 30px,
+        single: 30px,
+        single-section: 14px,
+        filters: 20px
+    ),
+    ingress: (
+        base: 18px,
+        hero: 18px,
+        hero-lh: 27px
+    ),
+    list-count: (
+        recipe: 30px,
+        recipe-lh: 35px
+    ),
+    link: (
+        recipe-product: 14px,
+        recipe-product-mob: 12px
+    )
+);

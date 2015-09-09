@@ -1,0 +1,80 @@
+@mixin last-el($n) {
+    &:nth-child(#{$n}n) {
+        @include last;
+        @content;
+    }
+}
+
+@mixin font($stack, $weight: false) {
+    font-family: unquote(map-get(map-get($font, $stack), stack));
+    @if $weight {
+        font-weight: $weight;
+    }
+
+}
+
+@mixin font-size($element, $context: base) {
+    $rem-val: map-get(map-get($font-size, $element), $context);
+    font-size: $rem-val;
+    font-size: ($rem-val / 10) / 1px + rem;
+}
+
+@mixin line-height($element, $context: base) {
+    $rem-val: map-get(map-get($font-size, $element), $context);
+    line-height: $rem-val;
+    line-height: ($rem-val / 10) / 1px + rem;
+}
+
+@mixin breakpoint($bp) {
+    @if $bp == 'nav-break' {
+        $bp: $bp-nav-break;
+    }
+    $em-val: (map-get($breakpoints, $bp) / 16) / 1px + 0em;
+
+    @include susy-media($em-val) {
+        @content;
+    }
+}
+
+@mixin breakpoint-nav-break-next() {
+    $em-val: (navBreakNext() / 16) / 1px + 0em;
+
+    @include susy-media($em-val) {
+        @content;
+    }
+}
+
+@mixin hyphenate() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin ir() {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+
+// HiDPI mixin. Default value set to 1.3 to target Google Nexus 7 (http://bjango.com/articles/min-device-pixel-ratio/)
+@mixin hidpi($ratio: 1.3) {
+    @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+    only screen and (min--moz-device-pixel-ratio: $ratio),
+    only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+    only screen and (min-resolution: round($ratio * 96dpi)),
+    only screen and (min-resolution: $ratio * 1dppx) {
+        @content;
+    }
+}
