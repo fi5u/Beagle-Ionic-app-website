@@ -1,7 +1,3 @@
 .main {
-    background: color(white);
-
-    &__inner {
-        @include container;
-    }
+    flex: 1;
 }
