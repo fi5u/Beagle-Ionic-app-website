@@ -23,6 +23,12 @@ $text-shadow: .5px .5px .5px color(gray, dark);
                 }
             }
 
+            &__download-link {
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+            }
+
     &--home {
         .section__side {
             @include breakpoint(mini) {
