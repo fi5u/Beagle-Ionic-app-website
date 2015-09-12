@@ -1,21 +1,47 @@
+$text-shadow: .5px .5px .5px color(gray, dark);
+
 .section {
     &__body {
-        padding-top: 80px;
+        @include clearfix;
+
+        padding: 40px 0;
+        text-shadow: $text-shadow;
     }
 
-        &__title {
-            @include font-size(heading);
+            &__title {
+                @include font-size(heading);
 
-            font-weight: 300;
-            font-style: italic;
-            line-height: 1;
+                margin: 0 0 40px;
 
-            &--primary {
-                @include font-size(heading, large);
+                font-weight: 300;
+                font-style: italic;
+                line-height: 1;
+                text-shadow: $text-shadow;
+
+                &--primary {
+                    @include font-size(heading, large);
+                }
             }
-        }
 
     &--home {
+        .section__side {
+            @include breakpoint(mini) {
+                @include span(8 of 12);
 
+                &:nth-child(2n) {
+                    @include span(4 of 12);
+                    @include last;
+                }
+            }
+
+            @include breakpoint(full) {
+                @include span(6 of 12);
+
+                &:nth-child(2n) {
+                    @include span(6 of 12);
+                    @include last;
+                }
+            }
+        }
     }
 }

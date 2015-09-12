@@ -1,22 +1,15 @@
 .main {
+    display: flex;
     flex: 1;
+    margin-top: auto;
+    margin-bottom: auto;
 
     &__inner {
         @extend %layout-inner;
 
         position: relative;
-
-        &:before {
-            position: absolute;
-            top: 30%;
-            right: 0;
-            z-index: -1;
-            width: 48%;
-            height: 400px;
-
-            content: "";
-            background: url(../img/mockup-iphone-6plus.png) no-repeat right bottom;
-            background-size: contain;
-        }
+        margin-top: auto;
+        margin-bottom: auto;
+        flex: 1;
     }
 }
