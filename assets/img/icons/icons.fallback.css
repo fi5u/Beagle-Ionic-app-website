@@ -1,6 +1,10 @@
 .page-header__title:before,
 .icon-beagle-logo { background-image: url('png/beagle-logo.png'); background-repeat: no-repeat; }
 
+.icon-mockup-iphone-6plus { background-image: url('png/mockup-iphone-6plus.png'); background-repeat: no-repeat; }
+
+.icon-mockup-iphone-6plus@2x { background-image: url('png/mockup-iphone-6plus@2x.png'); background-repeat: no-repeat; }
+
 .page-footer__link--support:before,
 .icon-speech-bubble { background-image: url('png/speech-bubble.png'); background-repeat: no-repeat; }
 

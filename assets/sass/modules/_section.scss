@@ -1,21 +1,21 @@
 .section {
-    &__inner {
-        @include container;
+    &__body {
+        padding-top: 80px;
     }
 
-        &__body {
-            padding-top: 80px;
+        &__title {
+            @include font-size(heading);
+
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1;
+
+            &--primary {
+                @include font-size(heading, large);
+            }
         }
 
-            &__title {
-                @include font-size(heading);
+    &--home {
 
-                font-weight: 300;
-                font-style: italic;
-                line-height: 1;
-
-                &--primary {
-                    @include font-size(heading, large);
-                }
-            }
+    }
 }

@@ -6,9 +6,7 @@
 
 html,
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 html {
@@ -18,13 +16,17 @@ html {
     font-size: 62.5%;
     font-weight: 300;
     color: color(white);
+    background: linear-gradient(color(crimson), color(black));
 }
 
 body {
     @include font-size(body);
-    line-height: 1.8;
 
-    background: linear-gradient(color(crimson), color(black));
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    line-height: 1.6;
 }
 
 img {

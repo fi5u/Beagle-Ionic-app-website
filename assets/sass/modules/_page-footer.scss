@@ -3,11 +3,12 @@
     text-align: right;
 
     &__inner {
-        @include container;
+        @extend %layout-inner;
     }
 
         &__link {
             position: relative;
+            padding-right: 35px;
 
             text-decoration: none;
             line-height: 20px;
@@ -15,7 +16,7 @@
             &:before {
                 position: absolute;
                 top: -5px;
-                right: -35px;
+                right: 0;
                 width: 30px;
                 height: 30px;
 
