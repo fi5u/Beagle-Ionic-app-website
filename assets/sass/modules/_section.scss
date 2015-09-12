@@ -1,11 +1,8 @@
-$text-shadow: .5px .5px .5px color(gray, dark);
-
 .section {
     &__body {
         @include clearfix;
 
         padding: 40px 0;
-        text-shadow: $text-shadow;
     }
 
             &__title {
@@ -16,7 +13,6 @@ $text-shadow: .5px .5px .5px color(gray, dark);
                 font-weight: 300;
                 font-style: italic;
                 line-height: 1;
-                text-shadow: $text-shadow;
 
                 &--primary {
                     @include font-size(heading, large);
