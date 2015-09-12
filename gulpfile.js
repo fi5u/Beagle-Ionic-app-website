@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
+    concat = require('gulp-concat'),
     Grunticon = require('grunticon-lib'),
     q = require('q'),
     fs = require('fs'),
@@ -11,6 +12,7 @@ var gulp = require('gulp'),
     paths = {
         sass: './assets/sass',
         css: './assets/css',
+        js: './assets/js',
         images: './assets/img',
         icons: './assets/img/icons'
     };
@@ -25,6 +27,12 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.css))
         .pipe(browserSync.stream());
+});
+
+gulp.task('jsVendor', function() {
+    gulp.src(paths.js + '/vendor/*.js')
+        .pipe(concat('vendors.js'))
+        .pipe(gulp.dest(paths.js));
 });
 
 gulp.task('icons', function() {
@@ -47,7 +55,7 @@ gulp.task('icons', function() {
 
 
 
-gulp.task('watch', ['sass', 'icons'], function() {
+gulp.task('watch', ['sass', 'jsVendor', 'icons'], function() {
     browserSync.init({
         server: './',
         browser: ['google chrome'],
@@ -55,6 +63,7 @@ gulp.task('watch', ['sass', 'icons'], function() {
     });
 
     gulp.watch(paths.sass + '/**/*.scss', ['sass']);
+    gulp.watch(paths.js + '/vendor/*', ['jsVendor']);
     gulp.watch([paths.images + '/**/*.svg', paths.images + '/icons/_custom-selectors.json'], ['icons']);
     gulp.watch('**/*.html').on('change', browserSync.reload);
 });
