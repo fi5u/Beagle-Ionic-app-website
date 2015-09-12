@@ -1,3 +1,33 @@
 .page-header {
+    padding-top: 40px;
 
+    &__inner {
+        @include container;
+    }
+
+        &__title-link {
+            text-decoration: none;
+        }
+
+            &__title {
+                @include font(logo);
+                @include font-size(logo);
+                @include line-height(logo, base-lh);
+                font-weight: 300;
+                letter-spacing: -2px;
+
+                position: relative;
+                padding-left: 60px;
+
+                color: color(white);
+
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 51px;
+                    content: "";
+                }
+            }
 }

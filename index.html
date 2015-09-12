@@ -10,12 +10,17 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="assets/css/style.css">
+
+        <script src="assets/img/icons/grunticon.loader.js"></script>
+        <script>grunticon(["assets/img/icons/icons.data.svg.css", "assets/img/icons/icons.data.png.css", "assets/img/icons/icons.fallback.css"], grunticon.svgLoadedCallback);</script>
     </head>
     <body>
         <header class="page-header">
-            <a href="/">
-                <div class="page-header__title">Beagle</div>
-            </a>
+            <div class="page-header__inner">
+                <a href="/" class="page-header__title-link">
+                    <div class="page-header__title">Beagle</div>
+                </a>
+            </div>
         </header>
 
         <section class="section section--home">

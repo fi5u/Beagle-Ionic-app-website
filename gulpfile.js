@@ -3,6 +3,9 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     Grunticon = require('grunticon-lib'),
+    q = require('q'),
+    fs = require('fs'),
+    path = require('path'),
     browserSync = require('browser-sync').create(),
 
     paths = {
@@ -44,7 +47,7 @@ gulp.task('icons', function() {
 
 
 
-gulp.task('watch', ['sass'/*, 'icons'*/], function() {
+gulp.task('watch', ['sass', 'icons'], function() {
     browserSync.init({
         server: './',
         browser: ['google chrome'],
