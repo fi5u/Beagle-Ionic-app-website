@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic|Raleway:200&text=Beagl);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic|Raleway:200&text=Beagl);
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -14,15 +14,21 @@ html {
 
     box-sizing: border-box;
     font-size: 62.5%;
-    color: color(black);
+    font-weight: 300;
+    color: color(white);
 }
 
 body {
     @include font-size(body);
+    line-height: 1.8;
 
     background: linear-gradient(color(crimson), color(black));
 }
 
 img {
     max-width: 100%;
+}
+
+a {
+    color: color(white);
 }

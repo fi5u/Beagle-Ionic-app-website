@@ -1,3 +1,4 @@
 {
-    "beagle-logo":  [".page-header__title:before"]
+    "beagle-logo":      [".page-header__title:before"],
+    "speech-bubble":    [".page-footer__link--support:before"]
 }

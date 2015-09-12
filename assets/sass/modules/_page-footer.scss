@@ -1,3 +1,29 @@
 .page-footer {
+    text-align: right;
 
+    &__inner {
+        @include container;
+    }
+
+        &__link {
+            position: relative;
+
+            text-decoration: none;
+            line-height: 20px;
+
+            &:before {
+                position: absolute;
+                top: -5px;
+                right: -35px;
+                width: 30px;
+                height: 30px;
+
+                content: "";
+                color: color(white);
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
 }
