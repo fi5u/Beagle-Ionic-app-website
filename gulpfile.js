@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
+    minifyCss = require('gulp-minify-css'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     Grunticon = require('grunticon-lib'),
@@ -25,6 +26,7 @@ gulp.task('sass', function() {
         .pipe(autoprefixer({
             browsers: ['last 3 versions']
         }))
+        .pipe(minifyCss())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.css))
         .pipe(browserSync.stream());
