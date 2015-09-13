@@ -1,6 +1,8 @@
 .page-header__title:before,
 .icon-beagle-logo { background-image: url('png/beagle-logo.png'); background-repeat: no-repeat; }
 
+.icon-download-on-app-store_135x40 { background-image: url('png/download-on-app-store_135x40.png'); background-repeat: no-repeat; }
+
 .icon-mockup-iphone-6plus { background-image: url('png/mockup-iphone-6plus.png'); background-repeat: no-repeat; }
 
 .icon-mockup-iphone-6plus@2x { background-image: url('png/mockup-iphone-6plus@2x.png'); background-repeat: no-repeat; }

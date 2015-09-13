@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     Grunticon = require('grunticon-lib'),
     q = require('q'),
     fs = require('fs'),
@@ -31,7 +32,8 @@ gulp.task('sass', function() {
 
 gulp.task('jsVendor', function() {
     gulp.src(paths.js + '/vendor/*.js')
-        .pipe(concat('vendors.js'))
+        .pipe(concat('vendors.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(paths.js));
 });
 
