@@ -10,13 +10,17 @@ var gulp = require('gulp'),
     fs = require('fs'),
     path = require('path'),
     browserSync = require('browser-sync').create(),
+    del = require('del'),
+    fs = require('fs-extra'),
+    htmlreplace = require('gulp-html-replace'),
 
     paths = {
         sass: './assets/sass',
         css: './assets/css',
         js: './assets/js',
         images: './assets/img',
-        icons: './assets/img/icons'
+        icons: './assets/img/icons',
+        dist: './dist'
     };
 
 gulp.task('sass', function() {
@@ -57,6 +61,9 @@ gulp.task('icons', function() {
         return deferred.promise;
 });
 
+gulp.task('cleanBuild', function() {
+    return del([paths.dist + '/**/*']);
+});
 
 
 gulp.task('watch', ['sass', 'jsVendor', 'icons'], function() {
@@ -70,6 +77,19 @@ gulp.task('watch', ['sass', 'jsVendor', 'icons'], function() {
     gulp.watch(paths.js + '/vendor/*', ['jsVendor']);
     gulp.watch([paths.images + '/**/*.svg', paths.images + '/icons/_custom-selectors.json'], ['icons']);
     gulp.watch('**/*.html').on('change', browserSync.reload);
+});
+
+gulp.task('build', ['cleanBuild'], function() {
+    //fs.copy('./index.html', paths.dist + '/index.html', function () {});
+    fs.copy(paths.images, paths.dist + '/assets/img', function () {});
+    fs.copy(paths.js + '/vendors.min.js', paths.dist + '/assets/js/vendors.min.js', function () {});
+    fs.copy(paths.css + '/style.css', paths.dist + '/assets/css/style.css', function () {});
+
+    gulp.src('./index.html')
+        .pipe(htmlreplace({
+            'bs': ''
+        }))
+        .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('default', ['watch']);
