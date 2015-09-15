@@ -80,7 +80,9 @@ gulp.task('watch', ['sass', 'jsVendor', 'icons'], function() {
 });
 
 gulp.task('build', ['cleanBuild'], function() {
-    //fs.copy('./index.html', paths.dist + '/index.html', function () {});
+    fs.copy('./apple-touch-icon.png', paths.dist + '/apple-touch-icon.png', function () {});
+    fs.copy('./favicon.icns', paths.dist + '/favicon.icns', function () {});
+    fs.copy('./favicon.ico', paths.dist + '/favicon.ico', function () {});
     fs.copy(paths.images, paths.dist + '/assets/img', function () {});
     fs.copy(paths.js + '/vendors.min.js', paths.dist + '/assets/js/vendors.min.js', function () {});
     fs.copy(paths.css + '/style.css', paths.dist + '/assets/css/style.css', function () {});
